@@ -75,6 +75,9 @@ model = OpenAIChat(
 )
 
 
+# notes
+# revise this prompt and add benefitial systems to it, like for example some tags that allow it to rate its own tasks for
+
 BOSS_SYSTEM_PROMPT = """
 Manage a swarm of worker agents to efficiently serve the user by deciding whether to create new agents or delegate tasks. Ensure operations are efficient and effective.
 
@@ -113,6 +116,8 @@ Present your plan in clear, bullet-point format or short concise paragraphs, out
 """
 
 
+
+# i have to investigate each part of this class in detail with proper testing
 class AutoSwarmBuilder:
     """A class that automatically builds and manages swarms of AI agents.
 
@@ -303,7 +308,7 @@ class AutoSwarmBuilder:
             self.name + " " + self.description + " " + task,
         )
 
-
+# see how example prompts affect the agent
 example = AutoSwarmBuilder(
     name="ChipDesign-Swarm",
     description="A swarm of specialized AI agents collaborating on chip architecture, logic design, verification, and optimization to create novel semiconductor designs",
